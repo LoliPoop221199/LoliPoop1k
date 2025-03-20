@@ -13,22 +13,18 @@ body {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #6a0dad, #9b30ff, #d24dff);
-  background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;
+  position: relative;
 }
 
-/* Анимация для фона */
-@keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Видео фон */
+video.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Стили для контейнера */
