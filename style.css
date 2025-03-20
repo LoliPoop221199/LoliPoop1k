@@ -14,6 +14,7 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
+  background-color: #000; /* Фон */
 }
 
 /* Видео фон */
@@ -40,14 +41,14 @@ video.background-video {
   }
 }
 
-/* Экраны для вступления с текстом и блюром */
+/* Экран с блюром */
 .blur-screen {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 1); /* Очень сильный блюр */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +58,7 @@ video.background-video {
 
 @keyframes blurEffect {
   0% {
-    filter: blur(10px);
+    filter: blur(15px); /* Сильный блюр */
     opacity: 1;
   }
   100% {
@@ -68,15 +69,14 @@ video.background-video {
 
 /* Стили для контейнера */
 .container {
-  max-width: 900px;
-  padding: 40px;
-  border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
   position: relative;
   z-index: 1;
-  backdrop-filter: blur(10px);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
 }
 
 /* Логотип */
@@ -84,31 +84,25 @@ video.background-video {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-bottom: 20px;
   object-fit: cover;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 20px;
   animation: bounce 2s ease-in-out infinite;
 }
 
 /* Анимация для логотипа (подпрыгивание) */
 @keyframes bounce {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateY(-20px);
   }
 }
 
-/* Заголовок */
+/* Текст "LoliPoop1k" */
 h1 {
   font-size: 3rem;
-  margin-top: 100px;
-  margin-bottom: 20px;
   text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8), 0px 0px 25px rgba(255, 255, 255, 0.8);
   color: transparent;
   background: linear-gradient(135deg, #ff7c7c, #7c9eff, #8c66ff);
@@ -126,33 +120,6 @@ h1 {
   }
   100% {
     background-position: 0%;
-  }
-}
-
-/* Описание */
-.bio {
-  font-size: 2rem;
-  color: transparent;
-  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffb6b9);
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  animation: pulseText 2s ease infinite;
-}
-
-/* Анимация пульсации текста */
-@keyframes pulseText {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
   }
 }
 
