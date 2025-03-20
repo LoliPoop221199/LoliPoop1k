@@ -14,11 +14,12 @@
     Ваш браузер не поддерживает видео.
   </video>
 
-  <!-- Блюр экран, который исчезает через 2.5 секунды -->
+  <!-- Блюр экран с текстом -->
   <div class="blur-screen">
-    <h1>LoliPoop1k</h1>
+    <h1>hello?</h1>
   </div>
 
+  <!-- Контейнер для текста и кнопки -->
   <div class="container">
     <!-- Логотип -->
     <img src="img/logo.png" alt="Логотип" class="logo">
@@ -31,6 +32,17 @@
         </div>
       </a>
     </div>
+    
+    <!-- Текст, который появляется после "hello?" -->
+    <h1>LoliPoop1k</h1>
   </div>
+
+  <script>
+    // После 2.5 секунд блюр и текст "hello?" исчезают, и появляется основной контент
+    setTimeout(function() {
+      document.querySelector('.blur-screen').style.display = 'none';
+      document.querySelector('h1').style.display = 'block';
+    }, 2500);
+  </script>
 </body>
 </html>
