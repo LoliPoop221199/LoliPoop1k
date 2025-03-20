@@ -7,26 +7,43 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #6a0dad, #9b30ff);
+  background: linear-gradient(135deg, #6a0dad, #9b30ff, #d24dff);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
   color: white;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* Запрещаем прокрутку */
+  overflow: hidden;
+}
+
+/* Анимация для фона */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Стили для контейнера */
 .container {
   max-width: 900px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
   position: relative;
   z-index: 1;
+  backdrop-filter: blur(10px);
   animation: fadeIn 2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Эффект появления */
@@ -41,17 +58,17 @@ body {
 
 /* Логотип */
 .logo {
-  width: 150px; /* Размер логотипа */
+  width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
   object-fit: cover;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   position: absolute;
   top: -80px;
   left: 50%;
   transform: translateX(-50%);
-  animation: bounce 2s ease-in-out infinite; /* Эффект анимации логотипа */
+  animation: bounce 2s ease-in-out infinite;
 }
 
 /* Анимация для логотипа (подпрыгивание) */
@@ -69,8 +86,9 @@ h1 {
   font-size: 3rem;
   margin-top: 100px;
   margin-bottom: 20px;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-  animation: slideIn 1s ease-out; /* Эффект для заголовка */
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8), 0px 0px 25px rgba(255, 255, 255, 0.8);
+  animation: slideIn 1s ease-out;
+  color: #ffffff;
 }
 
 /* Анимация для заголовка */
@@ -90,46 +108,53 @@ h1 {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #e8e8e8;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Стили для кнопок */
 button {
   background-color: transparent;
-  border: none;
-  color: white;
+  border: 2px solid #9b30ff;
+  color: #9b30ff;
   padding: 15px 25px;
   margin: 10px;
   border-radius: 50px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #9b30ff;
+  color: white;
   transform: scale(1.1);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
 }
 
 /* Стили для ссылок на кнопках */
 a {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 /* Кнопки с изображениями */
 .button-image {
-  width: 180px;
+  width: 220px;
   height: 50px;
-  background-color: #9b30ff;
+  background-color: rgba(155, 48, 255, 0.8);
   border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .button-image img {
@@ -140,7 +165,9 @@ a {
 
 .button-image:hover {
   transform: scale(1.1);
-  background-color: #6a0dad;
+  background-color: rgba(155, 48, 255, 1);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+  filter: brightness(1.2);
 }
 
 /* Мобильная адаптивность */
@@ -152,11 +179,11 @@ a {
     font-size: 1rem;
   }
   .logo {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   .button-image {
-    width: 150px;
-    height: 40px;
+    width: 200px;
+    height: 45px;
   }
 }
