@@ -23,6 +23,21 @@ body {
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Логотип */
+.logo {
+  width: 120px; /* Размер логотипа */
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover; /* Обрезать изображение по форме круга */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -60px; /* Позиционирование сверху, чтобы логотип был на фоне */
+  left: 50%;
+  transform: translateX(-50%); /* Центрирует логотип по горизонтали */
 }
 
 /* Заголовок */
