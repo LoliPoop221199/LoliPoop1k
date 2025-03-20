@@ -103,7 +103,7 @@ h1 {
   margin-right: auto;
 }
 
-/* Кнопка YouTube без текста и картинки */
+/* Кнопка YouTube с картинкой */
 .btn-new {
   position: relative;
   display: inline-block;
@@ -126,33 +126,38 @@ h1 {
   content: "";
   position: absolute;
   top: 0;
-  left: -200px;
-  width: 60px;
-  height: 100px;
-  background-color: #fff;
-  filter: blur(30px);
-  transform: skewX(30deg) translateZ(0);
-  transition: 1s;
-  animation-name: slideme;
-  animation-duration: 3s;
-  animation-delay: 0.05s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 70%);
+  filter: blur(10px);
+  animation: pulsate 1.5s ease-out infinite;
 }
 
-@keyframes slideme {
+@keyframes pulsate {
   0% {
-    left: -30px;
-    margin-left: 0px;
+    transform: scale(0.9);
+    opacity: 0.7;
   }
-  30% {
-    left: 110%;
-    margin-left: 80px;
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
   }
   100% {
-    left: 110%;
-    margin-left: 80px;
+    transform: scale(0.9);
+    opacity: 0.7;
   }
+}
+
+/* Картинка в кнопке YouTube */
+.btn-new img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Мобильная адаптивность */
