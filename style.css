@@ -14,37 +14,75 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden; /* Запрещаем прокрутку */
 }
 
 /* Стили для контейнера */
 .container {
   max-width: 900px;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
   position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Эффект появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Логотип */
 .logo {
-  width: 120px; /* Размер логотипа */
-  height: 120px;
+  width: 150px; /* Размер логотипа */
+  height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
-  object-fit: cover; /* Обрезать изображение по форме круга */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   position: absolute;
-  top: -60px; /* Позиционирование сверху, чтобы логотип был на фоне */
+  top: -80px;
   left: 50%;
-  transform: translateX(-50%); /* Центрирует логотип по горизонтали */
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite; /* Эффект анимации логотипа */
+}
+
+/* Анимация для логотипа (подпрыгивание) */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
 }
 
 /* Заголовок */
 h1 {
   font-size: 3rem;
+  margin-top: 100px;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  animation: slideIn 1s ease-out; /* Эффект для заголовка */
+}
+
+/* Анимация для заголовка */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Описание */
@@ -52,29 +90,57 @@ h1 {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #e8e8e8;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Стили для кнопок */
 button {
-  background-color: #9b30ff;
+  background-color: transparent;
   border: none;
   color: white;
   padding: 15px 25px;
   margin: 10px;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-  background-color: #6a0dad;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Стили для ссылки */
+/* Стили для ссылок на кнопках */
 a {
   text-decoration: none;
   color: white;
+}
+
+/* Кнопки с изображениями */
+.button-image {
+  width: 180px;
+  height: 50px;
+  background-color: #9b30ff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button-image img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.button-image:hover {
+  transform: scale(1.1);
+  background-color: #6a0dad;
 }
 
 /* Мобильная адаптивность */
@@ -84,5 +150,13 @@ a {
   }
   .bio {
     font-size: 1rem;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .button-image {
+    width: 150px;
+    height: 40px;
   }
 }
