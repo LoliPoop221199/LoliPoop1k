@@ -25,6 +25,45 @@ video.background-video {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  animation: playReverse 10s linear infinite;
+}
+
+/* Анимация для видео, чтобы оно шло назад */
+@keyframes playReverse {
+  0% {
+    transform: scale(1);
+    animation-direction: normal;
+  }
+  100% {
+    transform: scale(1);
+    animation-direction: reverse;
+  }
+}
+
+/* Экраны для вступления с текстом и блюром */
+.blur-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: blurEffect 2.5s ease-in-out forwards;
+}
+
+@keyframes blurEffect {
+  0% {
+    filter: blur(10px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 0;
+  }
 }
 
 /* Стили для контейнера */
@@ -123,7 +162,7 @@ h1 {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background-color: #9b30ff;
+  background-color: #808080; /* Серый цвет */
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(11, 99, 246, 1);
   overflow: hidden;
