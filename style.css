@@ -115,59 +115,58 @@ h1 {
   margin-right: auto;
 }
 
-/* Стили для кнопок */
-button {
-  background-color: transparent;
-  border: 2px solid #9b30ff;
-  color: #9b30ff;
-  padding: 15px 25px;
-  margin: 10px;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-button:hover {
+/* Кнопка YouTube */
+.btn-new {
+  position: relative;
+  display: inline-block;
   background-color: #9b30ff;
   color: white;
-  transform: scale(1.1);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
-  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(11, 99, 246, 1);
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
 
-/* Стили для ссылок на кнопках */
-a {
-  text-decoration: none;
-  color: inherit;
+.btn-new:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(11, 99, 246, 1);
 }
 
-/* Кнопки с изображениями */
-.button-image {
-  width: 220px;
-  height: 50px;
-  background-color: rgba(155, 48, 255, 0.8);
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+.btn-new:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 60px;
+  height: 100px;
+  background-color: #fff;
+  filter: blur(30px);
+  transform: skewX(30deg) translateZ(0);
+  transition: 1s;
+  animation-name: slideme;
+  animation-duration: 3s;
+  animation-delay: 0.05s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
-.button-image img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-.button-image:hover {
-  transform: scale(1.1);
-  background-color: rgba(155, 48, 255, 1);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-  filter: brightness(1.2);
+@keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
 }
 
 /* Мобильная адаптивность */
@@ -182,8 +181,8 @@ a {
     width: 120px;
     height: 120px;
   }
-  .button-image {
-    width: 200px;
-    height: 45px;
+  .btn-new {
+    font-size: 1rem;
+    padding: 12px 25px;
   }
 }
