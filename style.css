@@ -7,16 +7,15 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #6a0dad, #9b30ff, #d24dff);
-  background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;
-  color: white;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
+  background: linear-gradient(135deg, #6a0dad, #9b30ff, #d24dff);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
 }
 
 /* Анимация для фона */
@@ -42,18 +41,7 @@ body {
   position: relative;
   z-index: 1;
   backdrop-filter: blur(10px);
-  animation: fadeIn 2s ease-out;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Эффект появления */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* Логотип */
@@ -115,19 +103,17 @@ h1 {
   margin-right: auto;
 }
 
-/* Кнопка YouTube */
+/* Кнопка YouTube без текста и картинки */
 .btn-new {
   position: relative;
   display: inline-block;
+  width: 100px;
+  height: 100px;
   background-color: #9b30ff;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  text-align: center;
-  cursor: pointer;
+  border-radius: 50%;
   box-shadow: 0 5px 15px rgba(11, 99, 246, 1);
   overflow: hidden;
+  cursor: pointer;
   transition: all 0.5s ease;
 }
 
