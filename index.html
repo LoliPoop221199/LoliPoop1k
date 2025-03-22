@@ -9,28 +9,38 @@
 </head>
 <body>
     <div class="background"></div>
+    
+    <!-- Контент -->
     <div class="content">
-        <!-- Логотип -->
-        <img class="logo" src="Images/avatar.png" alt="Logo">
-
-        <!-- Заголовок -->
-        <h1 class="main-title">LoliPoop1k</h1>
-        <h2 class="sub-title">Готов к новым приключениям</h2>
-
-        <!-- Кнопки -->
-        <div class="buttons">
+        <!-- Закругленный контейнер для кнопок -->
+        <div class="button-container">
             <a href="https://dsc.gg/freeclients" target="_blank">
                 <button class="discord-btn">
-                    <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Discord_logo_2023.png" alt="Discord">
+                    <img class="social-icon" src="Images/discord.png" alt="Discord">
                     Discord
                 </button>
             </a>
             <a href="https://www.youtube.com/channel/@LoliPoop1k" target="_blank">
                 <button class="youtube-btn">
-                    <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/YouTube_logo_2015.svg" alt="YouTube">
+                    <img class="social-icon" src="Images/youtube.png" alt="YouTube">
                     YouTube
                 </button>
             </a>
+        </div>
+        
+        <!-- Логотип -->
+        <img class="logo" src="Images/avatar.png" alt="Logo">
+        
+        <!-- Заголовок с градиентом -->
+        <h1 class="main-title">LoliPoop1k</h1>
+        <h2 class="sub-title">Готов к новым приключениям</h2>
+        
+        <!-- Музыкальный плеер -->
+        <div class="music-player">
+            <audio id="audioPlayer" controls>
+                <source src="path-to-your-music-file.mp3" type="audio/mp3">
+                Ваш браузер не поддерживает аудиоформат.
+            </audio>
         </div>
     </div>
 </body>
