@@ -24,7 +24,7 @@ body, html {
 
 /* Логотип */
 .logo {
-    width: 150px;
+    width: 200px;
     display: block;
     margin: 50px auto;
     border-radius: 50%;
@@ -36,12 +36,11 @@ body, html {
     transform: scale(1.1);
 }
 
-/* Основной заголовок с градиентом */
+/* Заголовок с градиентом */
 .main-title {
     text-align: center;
     font-size: 72px;
     font-weight: 600;
-    color: transparent;
     background: linear-gradient(45deg, #ff0080, #00bfff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -66,12 +65,13 @@ body, html {
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
     padding: 20px;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 /* Стили для кнопок */
@@ -88,17 +88,19 @@ button {
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
+    position: relative;
 }
 
+/* Эффект для кнопок */
 button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.8);
 }
 
-/* Иконки кнопок */
+/* Иконки внутри кнопок */
 .social-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     transition: transform 0.3s, filter 0.3s;
 }
@@ -173,4 +175,19 @@ audio {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 10px;
+}
+
+/* Установка анимаций и эффектов для всей страницы */
+body {
+    animation: moveBackground 15s infinite linear;
+}
+
+/* Переливающийся фоновый эффект */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
