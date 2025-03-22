@@ -1,81 +1,193 @@
-/* Стили для страницы VETEMENTS */
+/* Общие стили для страницы */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Julius Sans One', sans-serif;
-    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/1920x1080/?abstract') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
-.container {
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
+/* Элементы фона */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    filter: blur(15px);
 }
 
-/* Заголовок */
-.title {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    margin: 20px 0;
-}
-
-/* Аватар */
-.avatar-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.avatar {
-    width: 120px;
-    height: 120px;
+/* Логотип */
+.logo {
+    width: 200px;
+    display: block;
+    margin: 50px auto;
     border-radius: 50%;
-    border: 2px solid #fff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s;
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: #ccc;
-}
-
-/* Социальные иконки */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.icon-link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 50%;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.icon-link:hover {
+.logo:hover {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Заголовок с градиентом */
+.main-title {
+    text-align: center;
+    font-size: 72px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff0080, #00bfff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8), 0px 0px 60px rgba(0, 255, 255, 0.6);
+    letter-spacing: 5px;
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Подзаголовок */
+.sub-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Закругленный контейнер для кнопок */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Стили для кнопок */
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+/* Эффект для кнопок */
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Иконки внутри кнопок */
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+button:hover .social-icon {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Кнопка Discord */
+.discord-btn {
+    background: linear-gradient(45deg, #7289da, #99aab5);
+    color: white;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.discord-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #7289da, #99aab5);
+    z-index: -1;
+    animation: glow-border 1.5s infinite alternate;
+}
+
+/* Кнопка YouTube */
+.youtube-btn {
+    background: linear-gradient(45deg, #ff0000, #ff4c4c);
+    color: white;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.youtube-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff0000, #ff4c4c);
+    z-index: -1;
+    animation: glow-border 1.5s infinite alternate;
+}
+
+/* Эффект свечения */
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 15px rgba(114, 137, 218, 0.8), 0 0 25px rgba(114, 137, 218, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(114, 137, 218, 1), 0 0 50px rgba(114, 137, 218, 0.8);
+    }
 }
 
 /* Музыкальный плеер */
 .music-player {
-    margin-top: 20px;
-    font-size: 1rem;
+    text-align: center;
+    margin-top: 50px;
 }
 
 audio {
-    width: 100%;
-    margin-top: 10px;
-    outline: none;
-    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+/* Установка анимаций и эффектов для всей страницы */
+body {
+    animation: moveBackground 15s infinite linear;
+}
+
+/* Переливающийся фоновый эффект */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
