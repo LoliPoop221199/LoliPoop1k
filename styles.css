@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/1920x1080/?abstract') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
@@ -36,26 +36,27 @@ body, html {
     transform: scale(1.1);
 }
 
-/* Заголовок */
-h1 {
+/* Основной заголовок */
+.main-title {
     text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8), 0px 0px 40px rgba(0, 255, 255, 0.6);
+    font-size: 72px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0px 30px rgba(255, 0, 255, 0.8), 0px 0px 60px rgba(0, 255, 255, 0.6);
     letter-spacing: 5px;
     margin-top: 20px;
-    animation: glow 1.5s infinite alternate;
+    font-family: 'Raleway', sans-serif;
 }
 
-/* Анимация для текста */
-@keyframes glow {
-    0% {
-        text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.6), 0px 0px 20px rgba(0, 255, 255, 0.5);
-    }
-    100% {
-        text-shadow: 0px 0px 30px rgba(255, 0, 255, 0.9), 0px 0px 50px rgba(0, 255, 255, 0.7);
-    }
+/* Подзаголовок */
+.sub-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Контейнер для кнопок */
