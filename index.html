@@ -1,47 +1,55 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoliPoop1k</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;600&family=Raleway:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background"></div>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./src/assets/moon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.70" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Noto+Sans:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     
-    <!-- Контент -->
-    <div class="content">
-        <!-- Закругленный контейнер для кнопок -->
-        <div class="button-container">
-            <a href="https://dsc.gg/freeclients" target="_blank">
-                <button class="discord-btn">
-                    <img class="social-icon" src="Images/discord.png" alt="Discord">
-                    Discord
-                </button>
-            </a>
-            <a href="https://www.youtube.com/channel/@LoliPoop1k" target="_blank">
-                <button class="youtube-btn">
-                    <img class="social-icon" src="Images/youtube.png" alt="YouTube">
-                    YouTube
-                </button>
-            </a>
-        </div>
+    <!-- Open Graph meta tags for embed -->
+    <meta property="og:title" content="shadow">
+    <meta property="og:description" content="link in bio service | shadow">
+    <meta property="og:image" content="https://media1.tenor.com/m/B3K_YPnNyucAAAAd/porsche-911.gif">
+    <meta property="og:url" content="https://shdw.site">
 
-        <!-- Логотип -->
-        <img class="logo" src="Images/avatar.png" alt="Logo">
-        
-        <!-- Заголовок с градиентом -->
-        <h1 class="main-title">LoliPoop1k</h1>
-        <h2 class="sub-title">Готов к новым приключениям</h2>
-        
-        <!-- Музыкальный плеер -->
-        <div class="music-player">
-            <audio id="audioPlayer" controls>
-                <source src="path-to-your-music-file.mp3" type="audio/mp3">
-                Ваш браузер не поддерживает аудиоформат.
-            </audio>
-        </div>
-    </div>
-</body>
+    <title>shadow</title>
+ 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          animateTitle();
+      });
+
+      function animateTitle() {
+          const title = document.title;
+          const originalTitle = 'owner';
+          let index = 0;
+
+          setInterval(function () {
+              index = (index + 1) % (originalTitle.length + 1);
+              document.title = originalTitle.substring(0, index);
+          }, 300); 
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
