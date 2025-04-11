@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardelys Inc - Kişisel Web Sitem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Favikon bağlantısı -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div> <!-- Siyah katman -->
+    <div class="profile-container">
+        <img src="images/pp.png" alt="Profil Fotoğrafı" class="profile-pic">
+        <h1>Ardelys</h1>
+        <p>Arda, namı diğer Ardelys, yazılım ve ticaret alanında kendini geliştirmiş genç bir girişimcidir.</p>
+        <div class="social-media">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://store.steampowered.com" target="_blank"><i class="fa-brands fa-steam"></i></a>
+        </div>
+    </div>
+
+    <!-- Müzik ile alakalı bölüm -->
+
+    <button id="music-toggle" class="music-toggle">
+        <i class="fas fa-volume-up"></i> <!-- Sadece ikon -->
+    </button>
+
+    <audio id="background-music" loop>
+        <source src="music/song.mp3" type="audio/mpeg"> <!-- Müzik dosyasının yolu -->
+    </audio>
+
+    <script src="script.js"></script>
+
+    <!-- Code by Ardelys -->
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('images/bg.gif') no-repeat center center/cover; /* Arka plan GIF */
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Hafif siyahlık */
+    z-index: 0; /* Arka planda */
+}
+
+.profile-container {
+    text-align: center;
+    background-color: rgba(255, 192, 203, 0.7); /* Hafif şeffaf pembe */
+    padding: 50px;
+    border-radius: 20px;
+    width: 600px;
+    z-index: 1; /* İçerik kutusunu üstte göstermek için */
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0px;
+}
+
+h1, p {
+    color: white; /* Beyaz yazılar */
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+p {
+    color: white; /* Beyaz yazılar */
+    font-size: 20px; /* Yazı boyutunu büyüt */
+    margin: 15px 0; /* Üst ve alt boşluk */
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: white; /* Beyaz ikonlar */
+    font-size: 25px;
+    margin: 0 2px;
+    text-decoration: none;
+    display: inline-block; /* Animasyon için */
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: white; /* Üzerine gelince pembe renk */
+    animation: slide-rotate 0.6s forwards; /* Animasyon ekleme */
+}
+
+.music-toggle {
+    position: fixed; /* Sabit pozisyon */
+    top: 10px; /* Üstten 10px */
+    left: 10px; /* Soldan 10px */
+    background-color: rgba(255, 192, 203, 0.8); /* Buton arka plan rengi */
+    color: white; /* Beyaz yazı rengi */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.music-toggle:hover {
+    background-color: rgba(255, 105, 180, 0.8); /* Üzerine gelince buton rengi */
+}
+
+@keyframes slide-rotate {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Başlangıç durumu */
+    }
+    50% {
+        transform: translateY(-10px) rotate(15deg); /* Yukarı kaydır ve döndür */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg); /* Son duruma geri döner */
+    }
+}
+
+/* Code by Ardelys */
