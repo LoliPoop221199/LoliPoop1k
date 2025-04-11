@@ -1,0 +1,119 @@
+:root {
+  --lighting-color: #ff1100;
+  --lighting-intensity: 0.9;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  overflow: hidden;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.94);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  z-index: 10;
+  text-shadow: 0 0 10px var(--lighting-color), 0 0 20px var(--lighting-color), 0 0 30px var(--lighting-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0 0 10px var(--lighting-color), 0 0 20px var(--lighting-color), 0 0 30px var(--lighting-color);
+}
+
+.check-icon {
+  color: #ff0000;
+}
+
+.audio-control {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  margin-top: 20px;
+}
+
+.icon-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.icon-image:hover {
+  transform: scale(1.6);
+  box-shadow: 0 0 10px var(--lighting-color);
+}
+
+.view-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  gap: 8px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.view-counter i {
+  color: #ff1100;
+}
