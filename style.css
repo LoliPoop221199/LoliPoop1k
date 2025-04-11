@@ -21,7 +21,7 @@ body {
 
 .profile-container {
     text-align: center;
-    background-color: rgba(138,43,226, 0.7); 
+    background-color: rgba(75,0,130, 0.7); 
     padding: 50px;
     border-radius: 20px;
     width: 600px;
@@ -70,7 +70,7 @@ p {
     position: fixed; 
     top: 10px; 
     left: 10px; 
-    background-color: rgba(255, 192, 203, 0.8); 
+    background-color: rgba(75,0,130, 0.8); 
     color: white; 
     border: none;
     border-radius: 5px;
