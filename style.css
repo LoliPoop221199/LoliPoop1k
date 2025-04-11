@@ -80,7 +80,7 @@ p {
 }
 
 .music-toggle:hover {
-    background-color: rgba(255, 105, 180, 0.8); 
+    background-color: rgba(75,0,130, 0.8); 
 }
 
 @keyframes slide-rotate {
