@@ -1,0 +1,33 @@
+:root {
+    --ripple-color: rgba(255, 255, 255, 0.6);
+    --ripple-duration: 0.6s;
+    --ripple-size: 100px;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: var(--ripple-size);
+        height: var(--ripple-size);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: fixed;
+    border-radius: 50%;
+    background-color: var(--ripple-color);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: ripple var(--ripple-duration) ease-out;
+    z-index: 0;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}

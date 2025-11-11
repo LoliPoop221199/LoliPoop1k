@@ -1,0 +1,270 @@
+@media (max-width: 768px) {
+  body {
+    padding-block: 15px;
+    padding-inline: 15px;
+  }
+
+  .container {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    padding-block: 10px;
+    padding-inline: 10px;
+    gap: 10px;
+  }
+
+  .card {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    padding-block: 30px;
+    padding-inline: 20px;
+    min-block-size: 300px;
+  }
+
+  .avatar {
+    inline-size: 100px;
+    block-size: 100px;
+  }
+
+  .username {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .social-icon svg {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+
+  .music-player {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+  }
+
+  .discord-presence-badge {
+    top: 15px;
+    right: 15px;
+  }
+
+  .discord-presence-card {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    padding: 0 12px;
+    gap: 10px;
+    height: 72px;
+  }
+
+  .discord-avatar-container {
+    width: 44px;
+    height: 44px;
+  }
+
+  .discord-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .discord-username {
+    font-size: 13px;
+  }
+
+  .discord-activity {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-block: 15px;
+    padding-inline: 15px;
+  }
+
+  .card {
+    padding-block: 25px;
+    padding-inline: 15px;
+    gap: 15px;
+    min-block-size: 300px;
+  }
+
+  .avatar {
+    inline-size: 100px;
+    block-size: 100px;
+  }
+
+  .username {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .social-icon svg {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+
+  .music-player {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    block-size: 70px;
+    padding-inline: 15px;
+    gap: 12px;
+    margin-block-start: 8px;
+  }
+
+  .music-cover {
+    inline-size: 45px;
+    block-size: 45px;
+  }
+
+  .music-track-name {
+    font-size: 13px;
+  }
+
+  .music-time {
+    font-size: 10px;
+    min-inline-size: 32px;
+  }
+
+  .music-controls {
+    gap: 8px;
+  }
+
+  .music-control-btn img {
+    inline-size: 18px;
+    block-size: 18px;
+  }
+
+  .music-control-btn.play-pause img {
+    inline-size: 24px;
+    block-size: 24px;
+  }
+
+  .volume-control-wrapper {
+    top: 15px;
+    left: 15px;
+  }
+
+  .volume-button {
+    inline-size: 45px;
+    block-size: 45px;
+  }
+
+  .volume-button svg {
+    inline-size: 20px;
+    block-size: 20px;
+  }
+
+  .volume-slider-container {
+    inline-size: 45px;
+    block-size: 45px;
+  }
+
+  .volume-control-wrapper:hover .volume-slider-container {
+    inline-size: 45px;
+  }
+
+  .volume-slider-container:hover {
+    inline-size: 120px !important;
+  }
+
+  .discord-presence-badge {
+    top: 12px;
+    right: 12px;
+  }
+
+  .discord-presence-card {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    height: 68px;
+    padding: 0 10px;
+  }
+
+  .discord-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .discord-status-icon {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-player {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    block-size: 72px;
+    padding-inline: 12px;
+    gap: 10px;
+  }
+
+  .music-cover {
+    flex-basis: 44px;
+    inline-size: 44px;
+    block-size: 44px;
+  }
+
+  .music-track-name {
+    font-size: 13px;
+  }
+
+  .music-control-btn img {
+    inline-size: 24px;
+    block-size: 24px;
+  }
+
+  .music-control-btn.next-track img,
+  .music-control-btn.prev-track img {
+    inline-size: 16px;
+    block-size: 16px;
+    filter: grayscale(1) brightness(0.5) contrast(0.8);
+    opacity: 0.6;
+  }
+
+  .discord-presence-badge {
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .discord-presence-card {
+    inline-size: 95%;
+    max-inline-size: 95vw;
+    height: 65px;
+    padding: 0 8px;
+  }
+
+  .discord-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .discord-username {
+    font-size: 12px;
+  }
+
+  .discord-activity {
+    font-size: 10px;
+  }
+
+  .discord-status-icon {
+    width: 9px;
+    height: 9px;
+    bottom: 1px;
+    right: 1px;
+  }
+}

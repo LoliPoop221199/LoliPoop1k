@@ -1,0 +1,69 @@
+:root {
+    --glitch-duration: 2s;
+    --glitch-color-1: #ff00ff;
+    --glitch-color-2: #00ffff;
+}
+
+@keyframes glitch-1 {
+    0%, 100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 100% {
+        transform: translate(0);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translate(2px, -2px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        transform: translate(2px, 2px);
+    }
+}
+
+.username {
+    position: relative;
+    animation: glitch-1 var(--glitch-duration) infinite;
+}
+
+.username::before,
+.username::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.username::before {
+    color: var(--glitch-color-1);
+    animation: glitch-2 var(--glitch-duration) infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    z-index: 0;
+}
+
+.username::after {
+    color: var(--glitch-color-2);
+    animation: glitch-2 var(--glitch-duration) infinite reverse;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    z-index: 0;
+}

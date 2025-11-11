@@ -1,0 +1,48 @@
+:root {
+    --card-border-radius: 0;
+    --avatar-border-radius: 0;
+    --social-icon-border-radius: 0;
+    --button-border-radius: 0;
+}
+
+.card {
+    border-radius: var(--card-border-radius);
+    clip-path: polygon(
+        15px 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
+        15px 100%,
+        0 calc(100% - 15px),
+        0 15px
+    );
+}
+
+.card::before {
+    clip-path: polygon(
+        15px 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
+        15px 100%,
+        0 calc(100% - 15px),
+        0 15px
+    );
+}
+
+.avatar {
+    border-radius: var(--avatar-border-radius);
+}
+
+.social-icon {
+    border-radius: var(--social-icon-border-radius);
+}
+
+button,
+input,
+textarea,
+select {
+    border-radius: var(--button-border-radius);
+}

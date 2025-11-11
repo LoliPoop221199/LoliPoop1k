@@ -1,0 +1,26 @@
+.social-icons{
+  display:flex;
+  gap:20px;
+  margin-block-start:15px;
+}
+
+.social-icon{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--icon-color);
+  text-decoration:none;
+  opacity:calc(var(--icon-opacity)/100);
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .3s ease;
+}
+
+.social-icon:hover{transform:scale(1.2)}
+.social-icon:active{transform:scale(.95);transition:transform .1s ease}
+
+.social-icon svg{
+  inline-size:36px;
+  block-size:36px;
+  display:block;
+  pointer-events:none;
+}

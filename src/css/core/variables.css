@@ -1,0 +1,94 @@
+:root {
+  /* Global Colors and Theme */
+  --accent-color: #9E9E9E;
+  --text-color: #E0E0E0;
+  --background-color: #121212;
+  --icon-color: #BDBDBD;
+  --primary-gradient: #2C2C2C;
+  --secondary-gradient: #4A4A4A;
+  --text-muted: #808080;
+
+  /* Background Settings */
+  --background-size: cover;
+  --background-position: center;
+  --background-opacity: 1;
+  --background-blur: 0;
+
+  /* Layout Properties */
+  --container-max-width: 550px;
+  --card-max-width: 500px;
+  --card-min-height: 400px;
+  --card-padding: 50px;
+  --card-gap: 25px;
+  --container-gap: 12px;
+
+  /* Card Appearance */
+  --card-border-radius: 12px;
+  --card-blur: 10px;
+  --card-opacity: 30;
+
+  /* Avatar Settings */
+  --avatar-size: 120px;
+  --avatar-border-width: 4px;
+  --avatar-border-radius: 9999px;
+  --avatar-blur: 0;
+
+  /* Typography */
+  --username-font-size: 32px;
+  --description-font-size: 18px;
+  --description-max-width: 90%;
+  --description-line-height: 1.5;
+
+  /* Social Icons */
+  --social-icon-size: 28px;
+  --icon-opacity: 100;
+
+  /* Music Player */
+  --music-cover-size: 60px;
+  --music-control-size: 40px;
+  --music-seekbar-height: 4px;
+  --music-time-font-size: 14px;
+
+  /* Volume Control */
+  --volume-button-size: 32px;
+  --volume-slider-width: 100px;
+
+  /* Entry Overlay */
+  --entry-overlay-z-index: 1000;
+  --entry-overlay-background: rgba(0, 0, 0, 0.8);
+  --entry-overlay-color: #000000;
+  --entry-overlay-opacity: 1;
+  --entry-fade-duration: 1s;
+  --entry-text-size: 48px;
+  --entry-sub-text-size: 18px;
+  --entry-text-color: #FFFFFF;
+  --entry-sub-text-color: #BDBDBD;
+  --entry-main-text: "Hallo! :D";
+  --entry-sub-text: "Click anywhere to enter";
+  --entry-text-animation: fadeInUp;
+  --entry-text-delay: 0.3s;
+  --entry-sub-text-delay: 0.6s;
+
+  /* Animations and Transitions */
+  --animation-duration: 0.8s;
+  --animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --typing-cycle-duration: 8s;
+  --typing-cursor-blink: 0.75s;
+
+  /* Effects */
+  --icon-filter: none;
+  --ripple-size: 100px;
+  --ripple-color: rgba(255, 255, 255, 0.3);
+  --ripple-duration: 600ms;
+  --scan-width: 0.2rem;
+  --scan-color: rgba(0, 0, 0, 0.25);
+  --scan-opacity: 0.75;
+  --crt-z-index: 1;
+  --tv-scanline-opacity: 0.15;
+  --tv-flicker-speed: 0.1s;
+  --tv-vignette-strength: 0.5;
+
+  /* Cursor */
+  --cursor-size: 32px;
+  --cursor-image: url('');
+}

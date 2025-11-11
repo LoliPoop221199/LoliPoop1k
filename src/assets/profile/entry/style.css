@@ -1,0 +1,7 @@
+:root {
+    --entry-overlay-color: #000000;
+    --entry-overlay-opacity: 1;
+    --entry-fade-duration: 1s;
+    --entry-text-size: 48px;
+    --entry-sub-text-size: 18px;
+}

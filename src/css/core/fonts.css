@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url("../../assets/fonts/VCR_OSD_MONO.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
+    font-family: "VCR OSD Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+}

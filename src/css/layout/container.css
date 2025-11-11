@@ -1,0 +1,40 @@
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  width:100%;
+  max-width:500px;
+  position:relative;
+  z-index:0;
+}
+
+.card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  max-width:500px;
+  min-height:400px;
+  padding:50px;
+  gap:25px;
+  overflow:visible;
+  background:transparent;
+  border-radius:var(--card-border-radius);
+  backdrop-filter:blur(var(--card-blur));
+  -webkit-backdrop-filter:blur(var(--card-blur));
+}
+
+@media (max-width:768px){
+  .container{width:95%;max-width:95vw;padding:10px}
+  .card{width:95%;max-width:95vw;padding:30px 20px;min-height:350px}
+}
+
+@media (max-width:600px){
+  .card{padding:25px 15px;min-height:300px;gap:15px}
+  .avatar{width:100px;height:100px}
+  .username{font-size:26px}
+  .description{font-size:16px}
+}

@@ -1,0 +1,40 @@
+
+
+@keyframes type-untype {
+    0% {
+        max-width: 0;
+    }
+    40% {
+        max-width: 100%;
+    }
+    60% {
+        max-width: 100%;
+    }
+    95% {
+        max-width: 0;
+    }
+    100% {
+        max-width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--text-color);
+    }
+}
+
+.username {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid var(--text-color);
+    white-space: nowrap;
+    max-width: 0;
+    animation: 
+        type-untype var(--typing-cycle-duration) steps(40, end) infinite,
+        blink-caret var(--typing-cursor-blink) step-end infinite;
+    animation-delay: 0.5s;
+}

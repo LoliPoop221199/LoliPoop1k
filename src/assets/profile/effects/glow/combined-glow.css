@@ -1,0 +1,17 @@
+:root {
+    --username-glow-intensity: 8px;
+    --icon-glow-intensity: 6px;
+}
+
+.username {
+    text-shadow: 0 0 var(--username-glow-intensity) var(--text-color);
+}
+
+.social-icon {
+    filter: drop-shadow(0 0 var(--icon-glow-intensity) var(--icon-color));
+    transition: filter 0.3s ease;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 calc(var(--icon-glow-intensity) * 1.5) var(--icon-color));
+}

@@ -1,0 +1,12 @@
+:root {
+    --icon-glow-intensity: 6px;
+}
+
+.social-icon {
+    filter: drop-shadow(0 0 var(--icon-glow-intensity) var(--icon-color));
+    transition: filter 0.3s ease;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 calc(var(--icon-glow-intensity) * 1.5) var(--icon-color));
+}

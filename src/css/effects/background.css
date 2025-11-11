@@ -1,0 +1,34 @@
+#background-media-container{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+#background-media-container video{
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  width:auto;
+  height:auto;
+  transform:translate(-50%,-50%);
+  object-fit:var(--background-size);
+  opacity:var(--background-opacity);
+  filter:blur(calc(var(--background-blur) * 1px));
+}
+
+#background-media-container img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:var(--background-size);
+  object-position:var(--background-position);
+  opacity:var(--background-opacity);
+  filter:blur(calc(var(--background-blur) * 1px));
+}
+
+body{position:relative;z-index:0}

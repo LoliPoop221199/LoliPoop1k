@@ -1,0 +1,183 @@
+.discord-presence-badge{
+  position:fixed;
+  top:20px;
+  right:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:50px;
+  height:50px;
+  background:transparent;
+  border-radius:var(--card-border-radius);
+  backdrop-filter:blur(var(--card-blur));
+  -webkit-backdrop-filter:blur(var(--card-blur));
+  overflow:hidden;
+  cursor:pointer;
+  z-index:5;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.discord-presence-badge::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:0;
+  background:
+    linear-gradient(135deg, var(--primary-gradient), var(--secondary-gradient)),
+    var(--accent-color);
+  background-blend-mode:overlay;
+  opacity:calc(var(--card-opacity)/100);
+}
+
+.discord-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  outline:none !important;
+  will-change:transform;
+}
+.discord-button > *{
+  position:relative;
+  z-index:1;
+}
+
+.discord-presence-badge:hover{ transform:scale(1.08) !important; }
+.discord-presence-badge:active{ transform:scale(.95) !important; transition:transform .12s ease !important; }
+
+.discord-button img{
+  width:20px;
+  height:20px;
+  max-width:60%;
+  max-height:60%;
+  display:block;
+  transition:transform .28s cubic-bezier(.4,0,.2,1);
+}
+
+.discord-presence-badge:hover .discord-button img{transform:scale(1.08);filter:brightness(1.2)}
+
+.discord-presence-card{
+  position:fixed;
+  bottom:-120px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  width:100%;
+  max-width:500px;
+  height:80px;
+  padding:0 20px;
+  gap:15px;
+  overflow:hidden;
+  background:transparent;
+  border-radius:var(--card-border-radius);
+  backdrop-filter:blur(var(--card-blur));
+  -webkit-backdrop-filter:blur(var(--card-blur));
+  z-index:1015;
+  transition:
+    bottom .4s cubic-bezier(.34,1.2,.64,1),
+    opacity .4s cubic-bezier(.4,0,.2,1);
+  opacity:0;
+  pointer-events:none;
+}
+
+.discord-presence-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:0;
+  background:
+    linear-gradient(135deg, var(--primary-gradient), var(--secondary-gradient)),
+    var(--accent-color);
+  background-blend-mode:overlay;
+  opacity:calc(var(--card-opacity)/100);
+  transition:border-radius .3s ease;
+}
+
+.discord-presence-card > *{ position:relative; z-index:2; }
+
+.discord-presence-badge:hover ~ .discord-presence-card,
+.discord-presence-card.visible{
+  bottom:20px;
+  opacity:1;
+  pointer-events:auto;
+}
+
+.discord-avatar-container{ position:relative; display:inline-block; }
+.discord-avatar{
+  flex:0 0 50px;
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border:2px solid var(--accent-color);
+  border-radius:var(--card-border-radius);
+  display:block;
+}
+
+.discord-status-icon{
+  position:absolute;
+  bottom:2px;
+  right:2px;
+  width:12px;
+  height:12px;
+  z-index:3;
+  border-radius:50%;
+  box-shadow:0 0 4px rgba(0,0,0,.3);
+  border:1px solid var(--background-color);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.discord-status-icon.online{  background-image:url("../../assets/icons/discord/online.png"); }
+.discord-status-icon.idle{    background-image:url("../../assets/icons/discord/idle.png"); }
+.discord-status-icon.dnd{     background-image:url("../../assets/icons/discord/dnd.png"); }
+.discord-status-icon.invisible{ background-image:url("../../assets/icons/discord/invisible.png"); }
+
+.discord-info{
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-width:0;
+}
+.discord-username{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text-color);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.discord-activity{
+  font-size:12px;
+  color:var(--text-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* mobile adjustments mirror the volume control breakpoints and sizes */
+@media (max-width:600px){
+  .discord-button img{ width:20px; height:20px; }
+}
+
+@media (max-width:480px){
+  .discord-presence-badge{ top:15px; right:15px; width:45px; height:45px; }
+  .discord-presence-card{
+    max-width:95%;
+    padding:0 12px;
+    gap:10px;
+    height:72px;
+  }
+  .discord-avatar-container{ width:44px; height:44px; }
+  .discord-avatar{ width:44px; height:44px; }
+  .discord-username{ font-size:13px; }
+  .discord-activity{ font-size:11px; }
+}

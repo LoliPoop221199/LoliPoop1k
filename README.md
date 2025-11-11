@@ -1,33 +1,28 @@
-# Clone guns.lol & e-z.bio
+# [<img src="./src/assets/icons/favicon/favicon.png" width="40" align="left" alt="openglocklol">](https://github.com/GlockFatherDraco/opengunslol) opengunslol
 
-## Preview https://fawkes.lol
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-![Preview 1](./static/preview.gif)
+This prject is a fully open source website inspired by [guns.lol](https://guns.lol), [ezbio](https://e-z.bio/) and [linktree](https://linktr.ee/)
 
-## Stack
+## Features
 
-- [Svelte Kit](https://svelte.dev/) - The fastest way to build Svelte apps.
-- [Bun](https://bun.com/) - The fast and self-contained JavaScript and TypeScript runtime.
+| Feature | Status |
+|---|---|
+| Custom colors | ✅ |
+| Custom text | ✅ |
+| Custom social icons | ✅ |
+| Corner radius control | ✅ |
+| Custom background | ✅ |
+| Music player with tracks and covers | ✅ |
+| Username and background effects | ✅ |
+| Volume control | ✅ |
+| Custom cursor | ✅ |
+| Views system | ❌ |
 
-## Running Locally
+---
 
-```bash
-npm install
-npm i -D @sveltejs/adapter-static @sveltejs/vite-plugin-svelte @sveltejs/kit svelte vite
-bun run dev
-```
 
-## Important
 
-* To work you need to install bun.
-* The site is configured in the config.ts file, at src/lib/config.ts
-* To build you will need the command:
-```bash
-npm run build
-```
-
-## License
-
-1. You are free to use this code as inspiration.
-2. Please do not copy it directly.
-3. Crediting the author is appreciated.
+[Live Preview](https://glockfatherdraco.github.io/opengunslol/)

@@ -1,0 +1,7 @@
+:root {
+    --username-glow-intensity: 8px;
+}
+
+.username {
+    text-shadow: 0 0 var(--username-glow-intensity) var(--text-color);
+}

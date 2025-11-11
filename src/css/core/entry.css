@@ -1,0 +1,50 @@
+.entry-overlay{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  background:var(--entry-overlay-color);
+  opacity:var(--entry-overlay-opacity);
+  cursor:pointer;
+  transition:opacity var(--entry-fade-duration) ease-out;
+}
+.entry-overlay.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+
+.entry-main-text::before{
+  content:var(--entry-main-text);
+  font-size:var(--entry-text-size);
+  font-weight:700;
+  color:var(--entry-text-color);
+  animation:var(--entry-text-animation) 0.8s ease-out var(--entry-text-delay) both;
+}
+
+.entry-sub-text::before{
+  content:var(--entry-sub-text);
+  font-size:var(--entry-sub-text-size);
+  color:var(--entry-sub-text-color);
+  animation:var(--entry-text-animation) 0.8s ease-out var(--entry-sub-text-delay) both;
+}
+.entry-sub-text{
+  animation:pulse 2s ease-in-out infinite;
+  animation-delay:var(--entry-sub-text-delay);
+}
+
+body.entry-active{
+  overflow:hidden!important;
+  position:fixed;
+  inset:0;
+}
+body.entry-active .card,
+body.entry-active .music-player,
+body.entry-active .volume-control-wrapper{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none;
+}

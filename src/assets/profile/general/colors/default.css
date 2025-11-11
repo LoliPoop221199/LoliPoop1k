@@ -1,0 +1,13 @@
+:root {
+    --accent-color: #9E9E9E;
+    --text-color: #E0E0E0;
+    --background-color: #121212;
+    --icon-color: #BDBDBD;
+    
+    --primary-gradient: #2C2C2C;
+    --secondary-gradient: #4A4A4A;
+    
+    --text-muted: #808080;
+    --icon-background: #f7fafc;
+    --background-image: none;
+}

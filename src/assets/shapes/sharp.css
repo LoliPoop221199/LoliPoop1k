@@ -1,0 +1,25 @@
+:root {
+    --card-border-radius: 0;
+    --avatar-border-radius: 50%;
+    --social-icon-border-radius: 0;
+    --button-border-radius: 0;
+}
+
+.card {
+    border-radius: var(--card-border-radius);
+}
+
+.avatar {
+    border-radius: var(--avatar-border-radius);
+}
+
+.social-icon {
+    border-radius: var(--social-icon-border-radius);
+}
+
+button,
+input,
+textarea,
+select {
+    border-radius: var(--button-border-radius);
+}

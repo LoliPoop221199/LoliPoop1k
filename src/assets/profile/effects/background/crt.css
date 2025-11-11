@@ -1,0 +1,48 @@
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--scan-width);
+    background: var(--scan-color);
+    opacity: var(--scan-opacity);
+    z-index: var(--crt-z-index);
+    pointer-events: none;
+    animation: crt-scan-moving 6s linear infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        var(--scan-color) 51%
+    );
+    background-size: 100% calc(var(--scan-width) * 2);
+    z-index: calc(var(--crt-z-index) - 1);
+    pointer-events: none;
+    animation: crt-static 1s steps(60) infinite;
+}
+
+@keyframes crt-scan-moving {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 100vh, 0);
+    }
+}
+
+@keyframes crt-static {
+    0% {
+        background-position: 0 50%;
+    }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <!-- META / TITLE -->  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>@GlockFatherDraco</title>  
+  <!-- SITE DESCRIPTION -->  
+  <meta name="description" content="opengunslol">  
+  
+ <!-- CURSOR -->  
+  <meta name="cursor-image" content="src/assets/icons/cursor/orb.cur">  
+  
+  <!-- FAVICON -->  
+  <link rel="icon" type="image/x-icon" href="src/assets/icons/favicon/favicon.png">  
+  
+  <!-- FONTS -->  
+  <link rel="stylesheet" href="src/css/core/fonts.css">  
+  <!-- VARIABLES -->  
+  <link rel="stylesheet" href="src/css/core/variables.css">  
+  
+  <!-- THEME -->  
+  <link rel="stylesheet" href="src/assets/profile/general/colors/default.css">  
+  <link rel="stylesheet" href="src/assets/profile/general/opacity.css">  
+  <link rel="stylesheet" href="src/assets/profile/general/blur.css">  
+  
+  <!-- SHAPES -->  
+  <link rel="stylesheet" href="src/assets/shapes/semi-rounded.css">  
+  
+  <!-- ENTRY -->  
+  <link rel="stylesheet" href="src/assets/profile/entry/text.css">  
+  <link rel="stylesheet" href="src/assets/profile/entry/style.css">  
+  <link rel="stylesheet" href="src/assets/profile/entry/animation.css">  
+  
+  <!-- EFFECTS -->  
+  <link rel="stylesheet" href="src/assets/profile/effects/click/default.css">  
+  <link rel="stylesheet" href="src/assets/profile/effects/username/default.css">  
+  <link rel="stylesheet" href="src/assets/profile/effects/background/crt.css">  
+  <link rel="stylesheet" href="src/assets/profile/effects/glow/combined-glow.css">  
+  
+  <!-- BACKGROUND + CURSOR STYLES -->  
+  <link rel="stylesheet" href="src/css/effects/background.css">  
+  <link rel="stylesheet" href="src/css/utils/cursor.css">  
+  
+  <!-- COMPONENTS -->  
+  <link rel="stylesheet" href="src/css/core/base.css">  
+  <link rel="stylesheet" href="src/css/components/card.css">  
+  <link rel="stylesheet" href="src/css/components/social.css">  
+  <link rel="stylesheet" href="src/css/core/entry.css">  
+  <link rel="stylesheet" href="src/css/components/music-player.css">  
+  <link rel="stylesheet" href="src/css/components/volume-control.css">  
+  <link rel="stylesheet" href="src/css/components/discord-presence.css">  
+  <link rel="stylesheet" href="src/css/layout/responsive.css">  
+    
+  <!-- Replace with your actual Discord user ID -->  
+  <meta name="discord-user-id" content="752594479902621736">  
+</head>  
+<body>  
+  
+  
+  <div id="background-media-container"></div>  
+  
+<!-- BACKGROUND -->  
+<script>  
+function loadBackground(url) {  
+  const container = document.getElementById("background-media-container")  
+  container.innerHTML = ""  
+  
+  const ext = url.split('.').pop().toLowerCase()  
+  const videoTypes = ["mp4", "webm", "ogg"]  
+  const imageTypes = ["jpg", "jpeg", "png", "gif", "webp", "avif"]  
+  
+  if (videoTypes.includes(ext)) {  
+    const video = document.createElement("video")  
+    video.src = url  
+    video.autoplay = true  
+    video.loop = true  
+    video.muted = true  
+    video.playsInline = true  
+    container.appendChild(video)  
+  } else if (imageTypes.includes(ext)) {  
+    const img = document.createElement("img")  
+    img.src = url  
+    container.appendChild(img)  
+  } else {  
+    container.textContent = "Unsupported media format."  
+  }  
+}  
+  
+loadBackground("src/assets/profile/background/minecraft-sunset.mp4")  
+</script>  
+  
+  <!-- ENTRY OVERLAY -->  
+  <div class="entry-overlay">  
+    <div class="entry-main-text"></div>  
+    <div class="entry-sub-text"></div>  
+  </div>  
+  
+  <!-- MAIN CARD -->  
+  <div class="container">  
+    <div class="card">  
+      <!-- Avatar -->  
+      <img src="src/assets/profile/avatar/avatar.jpeg" alt="Avatar" class="avatar">  
+  
+      <!-- Username -->  
+      <h2 class="username" data-text="GlockFatherDraco">GlockFatherDraco</h2>  
+      <p class="description">Content Creator & Developer</p>  
+  
+      <!-- Social Icons -->  
+      <div class="social-icons">  
+        <a href="https://discord.com/invite/RFFdBHKNGp" target="_blank" class="social-icon" aria-label="Discord">  
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">  
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>  
+          </svg>  
+        </a>  
+  
+        <a href="https://twitch.tv/glockfatherdraco" target="_blank" class="social-icon" aria-label="Twitch">  
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">  
+            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>  
+          </svg>  
+        </a>  
+  
+        <a href="https://www.youtube.com/@GlockFatherDraco" target="_blank" class="social-icon" aria-label="YouTube">  
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">  
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>  
+          </svg>  
+        </a>  
+  
+        <a href="https://x.com/glockfdraco" target="_blank" class="social-icon" aria-label="Twitter">  
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">  
+            <path d="M18.244 2.25h3.308l-7.227 8.26l8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>  
+          </svg>  
+        </a>  
+  
+        <a href="https://tiktok.com/@glockfatherdraco" target="_blank" class="social-icon" aria-label="TikTok">  
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">  
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.10-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07z"/>  
+          </svg>  
+        </a>  
+      </div>  
+    </div>  
+  
+    <!-- MUSIC PLAYER -->  
+    <div class="music-player">  
+      <img src="src/assets/music/covers/default.jpg" alt="Album Cover" class="music-cover">  
+  
+      <div class="music-info">  
+        <div class="music-track-name">No Track Loaded</div>  
+  
+        <div class="music-seekbar-container">  
+          <span class="music-time current current-time">0:00</span>  
+  
+          <div class="music-seekbar">  
+            <div class="music-seekbar-progress"></div>  
+          </div>  
+  
+          <span class="music-time duration duration-time">0:00</span>  
+        </div>  
+      </div>  
+  
+      <div class="music-controls">  
+        <button class="music-control-btn prev-track" aria-label="Previous Track">  
+          <img src="src/assets/icons/music/music-player/previous.svg" alt="Previous">  
+        </button>  
+  
+        <button class="music-control-btn play-pause" aria-label="Play/Pause">  
+          <img src="src/assets/icons/music/music-player/play.svg" alt="Play" class="play-icon">  
+          <img src="src/assets/icons/music/music-player/pause.svg" alt="Pause" class="pause-icon" style="display:none;">  
+        </button>  
+  
+        <button class="music-control-btn next-track" aria-label="Next Track">  
+          <img src="src/assets/icons/music/music-player/next.svg" alt="Next">  
+        </button>  
+      </div>  
+    </div>  
+  </div>  
+  
+  <!-- VOLUME CONTROL -->  
+  <div class="volume-control-wrapper">  
+    <div class="volume-button">  
+  
+    </div>  
+  
+    <div class="volume-slider-container">  
+      <div class="volume-slider-wrapper" style="--volume-percent: 100%;">  
+        <input type="range" min="0" max="100" value="100" class="volume-slider">  
+      </div>  
+    </div>  
+  </div>  
+  
+  <!-- DISCORD PRESENCE BADGE -->  
+  <div class="discord-presence-badge" aria-label="Show Discord presence" role="button" tabindex="0">  
+    <div class="discord-button">  
+      <img src="src/assets/icons/discord/discord.svg" alt="Discord">  
+    </div>  
+  </div>  
+  
+  <!-- DISCORD PRESENCE CARD -->  
+  <div class="discord-presence-card" role="region" aria-label="Discord presence information">  
+    <div class="discord-avatar-container">  
+      <img src="src/assets/profile/avatar/avatar.jpeg" alt="Discord Avatar" class="discord-avatar">  
+      <div class="discord-status-icon invisible" aria-hidden="true"></div>  
+    </div>  
+    <div class="discord-info">  
+      <div class="discord-username">Username</div>  
+      <div class="discord-activity">Discord presence</div>  
+    </div>  
+  </div>  
+  
+  <!-- SCRIPTS -->  
+  <script src="src/js/utils/cursor.js"></script>  
+  <script src="src/js/effects/background-effects.js"></script>  
+  <script src="src/js/core/entry.js"></script>  
+  <script src="src/js/effects/animations.js"></script>  
+  <script src="src/js/components/music-player.js"></script>  
+  <script src="src/js/components/volume-control.js"></script>  
+  <script src="src/js/components/discord-presence.js"></script>  
+  <script src="src/js/core/main.js"></script>  
+  <script src="src/js/effects/title-animation.js"></script>  
+</body>  
+</html>

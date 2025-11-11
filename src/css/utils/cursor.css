@@ -1,0 +1,20 @@
+:root {
+  --cursor-size: 24px;
+}
+
+.custom-cursor {
+  transition: opacity .2s ease;
+}
+
+* {
+  cursor: none !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  * {
+    cursor: auto !important;
+  }
+}

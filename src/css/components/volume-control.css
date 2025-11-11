@@ -1,0 +1,170 @@
+.volume-control-wrapper{
+  position:fixed;
+  top:20px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:5;
+  transition:transform .8s cubic-bezier(.34,1.56,.64,1);
+}
+
+.volume-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:50px;
+  height:50px;
+  background:transparent;
+  border-radius:var(--card-border-radius);
+  backdrop-filter:blur(var(--card-blur));
+  -webkit-backdrop-filter:blur(var(--card-blur));
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.volume-button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:0;
+  background:
+    linear-gradient(135deg,var(--primary-gradient),var(--secondary-gradient)),
+    var(--accent-color);
+  background-blend-mode:overlay;
+  opacity:calc(var(--card-opacity)/100);
+}
+
+.volume-button>*{position:relative;z-index:1}
+.volume-button:hover{transform:scale(1.08)}
+.volume-button:active{transform:scale(.95);transition:transform .12s ease}
+.volume-button svg{
+  width:24px;
+  height:24px;
+  fill:var(--icon-color);
+  transition:fill .28s cubic-bezier(.4,0,.2,1),transform .28s ease;
+}
+.volume-button img{
+  width:20px;
+  height:20px;
+  max-width:60%;
+  max-height:60%;
+  display:block;
+  transition:transform .28s cubic-bezier(.4,0,.2,1);
+}
+.volume-button:hover svg,
+.volume-button:hover img{transform:scale(1.08)}
+.volume-button:hover svg{fill:var(--text-color)}
+
+.volume-slider-container{
+  position:relative;
+  width:50px;
+  height:50px;
+  overflow:hidden;
+  border-radius:var(--card-border-radius);
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(-20px);
+  transition:
+    opacity .4s cubic-bezier(.4,0,.2,1),
+    transform .4s cubic-bezier(.34,1.2,.64,1),
+    width .4s cubic-bezier(.34,1.2,.64,1),
+    border-radius .3s ease;
+}
+.volume-slider-container::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:0;
+  background:
+    linear-gradient(135deg,var(--primary-gradient),var(--secondary-gradient)),
+    var(--accent-color);
+  background-blend-mode:overlay;
+  opacity:calc(var(--card-opacity)/100);
+  transition:border-radius .3s ease;
+}
+
+.volume-control-wrapper:hover .volume-slider-container{
+  opacity:1;
+  transform:translateX(0);
+  pointer-events:auto;
+  width:150px;
+}
+
+.volume-slider-wrapper{position:absolute;inset:0;z-index:1}
+.volume-slider-wrapper::after{
+  content:"";
+  position:absolute;
+  inset-block:0;
+  left:0;
+  width:var(--volume-percent);
+  background:linear-gradient(90deg,var(--text-color) 0%,var(--icon-color) 100%);
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:0;
+  transition:width .15s ease;
+  backdrop-filter:blur(calc(var(--card-blur)/2));
+  -webkit-backdrop-filter:blur(calc(var(--card-blur)/2));
+}
+
+.volume-slider{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  appearance:none;
+  background:transparent;
+  border-radius:inherit;
+  outline:none;
+  opacity:0;
+  z-index:2;
+  padding:0;
+  cursor:pointer;
+}
+
+.volume-slider::-webkit-slider-runnable-track{
+  width:100%;
+  height:100%;
+  background:transparent;
+  border:none;
+}
+.volume-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:20px;
+  height:20px;
+  background:transparent;
+  border:none;
+  margin-top:calc((100% - 20px)/2);
+  border-radius:50%;
+}
+
+.volume-slider::-moz-range-track{
+  width:100%;
+  height:100%;
+  background:transparent;
+  border:none;
+  border-radius:inherit;
+}
+.volume-slider::-moz-range-thumb{
+  width:20px;
+  height:20px;
+  background:transparent;
+  border:none;
+  border-radius:50%;
+}
+.volume-slider::-moz-range-progress{display:none}
+
+@media (max-width:600px){
+  .volume-control-wrapper{top:15px;left:15px}
+  .volume-button{width:45px;height:45px;border-radius:var(--card-border-radius)}
+  .volume-button svg{width:20px;height:20px}
+  .volume-slider-container{width:45px;height:45px}
+  .volume-control-wrapper:hover .volume-slider-container{width:120px}
+}
