@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 This prject is a fully open source website inspired by [guns.lol](https://guns.lol), [ezbio](https://e-z.bio/) and [linktree](https://linktr.ee/)
 
