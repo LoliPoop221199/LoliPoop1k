@@ -63,8 +63,8 @@
   --entry-sub-text-size: 18px;
   --entry-text-color: #FFFFFF;
   --entry-sub-text-color: #BDBDBD;
-  --entry-main-text: "Hallo! :D";
-  --entry-sub-text: "Click anywhere to enter";
+  --entry-main-text: "Hello! :D";
+  --entry-sub-text: "Click to reveal";
   --entry-text-animation: fadeInUp;
   --entry-text-delay: 0.3s;
   --entry-sub-text-delay: 0.6s;
