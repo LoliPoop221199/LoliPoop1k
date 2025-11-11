@@ -1,0 +1,1049 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    height: auto;
+    min-height: 15rem;
+    padding: 35px 15px;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    border: 2px solid rgba(175, 175, 175, 0.048);
+    margin: -10px; /* WITH MUSIC CONTAINER UP ANIMATION */
+    margin-top: 80px;
+    transition: 
+        transform 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99), 
+        height 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+    overflow: visible;
+    transform-style: preserve-3d;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
+}
+
+/* Media query para monitores semi ultrawide (2560x1080) */
+/* @media screen and (min-width: 2560px) {
+    .container {
+        max-width: 900px;
+        min-height: 20rem;
+        padding: 50px 25px;
+        margin-top: 100px;
+    }
+} */
+
+/* Ajustes para telas menores (tablets) */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 10px; /* Reduz o padding */
+        min-height: 12rem; /* Reduz a altura mínima */
+        max-width: 90%; /* Aumenta a largura máxima para ocupar mais espaço */
+        height: auto;
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 8px; /* Reduz ainda mais o padding */
+        min-height: 10rem; /* Reduz a altura mínima */
+        max-width: 95%; /* Aumenta a largura máxima para ocupar mais espaço */
+        border-radius: 10px; /* Reduz o border-radius para telas pequenas */
+        /* padding-bottom: 100px; */
+        margin-bottom: 80px;
+        border: 4px solid rgba(175, 175, 175, 0.034);
+        height: 580px;
+    }
+}
+
+
+.container .banner {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 13px 13px 0 0;
+}
+
+.container .avatar {
+    margin-top: 50px;
+    z-index: 1;
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    outline: 3px solid rgba(255, 255, 255, 0.301);
+    /* background-color: #ffffff; */
+    pointer-events: none;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 480px) {
+    .container .avatar {
+		margin-top: 20px;
+    }
+}
+
+.container .profileLayout {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 27rem;
+    text-align: center;
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .container .profileLayout {
+        padding-top: 10px;
+    }
+}
+
+.container .profileLayout .profileUsername {
+    font-weight: 600;
+    font-size: 50px;
+    width: fit-content;
+    pointer-events: none;
+    background-image: url(http://i752.photobucket.com/albums/xx164/optiikzz/rc599e.gif);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.container .profileLayout .profileUsername span{
+    font-weight: 600;
+    font-size: 40px;
+    width: fit-content;
+    pointer-events: none;
+}
+
+.container .profileLayout .profileBadges {
+    content: attr(data-tooltip);
+    margin-bottom: 17px;
+    margin-top: 8px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    border-radius: 25px;
+    display: flex;
+    gap: 5.5px;
+    justify-content: center;
+    padding: 6px 10px;
+}
+
+.container .profileLayout .profileBadges .profileBadge {
+    position: relative;
+    font-size: 20.5px;
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+}
+
+.container .profileLayout .profileBadges .profileBadge::before {
+    content: '';
+    background-color: black;
+    opacity: 0;
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 2px 16px;
+    z-index: 1;
+    filter: none;
+    box-shadow: none;
+    white-space: nowrap;
+    transition: opacity .3s;
+}
+
+/* Novo estilo para o tooltip personalizado */
+.badge-tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 4px 16px;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação tipo bounce */
+  }
+
+/* Podemos remover o pseudo-elemento ::before que era usado antes */
+.container .profileLayout .profileBadges .profileBadge::before {
+    display: none;
+  }
+
+/* .container .profileLayout .profileBadges .profileBadge:hover::before {
+    opacity: .8;
+}
+
+.container .profileLayout .profileBadges .profileBadge.dev:hover::before {
+    content: 'Developer';
+}
+.container .profileLayout .profileBadges .profileBadge.staff:hover::before {
+    content: 'Staff';
+}
+.container .profileLayout .profileBadges .profileBadge.certif:hover::before {
+    content: 'Certified';
+}
+.container .profileLayout .profileBadges .profileBadge.premium:hover::before {
+    content: 'Premium';
+}
+.container .profileLayout .profileBadges .profileBadge.bughunter:hover::before {
+    content: 'Bug Hunter';
+}
+.container .profileLayout .profileBadges .profileBadge.earlysupporter:hover::before {
+    content: 'Early Supporter';
+}
+.container .profileLayout .profileBadges .profileBadge.booster:hover::before {
+    content: 'Server Booster';
+}
+.container .profileLayout .profileBadges .profileBadge.graphic:hover::before {
+    content: 'Graphic Designer';
+}
+.container .profileLayout .profileBadges .profileBadge.imagehost:hover::before {
+    content: 'Image Host';
+}
+.container .profileLayout .profileBadges .profileBadge.sweet:hover::before {
+    content: 'Candy';
+}
+.container .profileLayout .profileBadges .profileBadge.patrick:hover::before {
+    content: 'St. Patrick';
+} */
+
+.container .profileLayout .profileBio {
+    font-weight: 570;
+    font-size: 17px;
+    margin-top: 5px;
+    color: white;
+    height: 23px;
+}
+
+@media (max-width: 480px) {
+    .container .profileLayout .profileBio {
+        margin-top: 5px;
+        height: 1px;
+    }
+}
+
+.container .presenceWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 28rem;
+    width: 100%;
+}
+
+.container .presenceContainer {
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    width: 100%;
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .container .presenceContainer {
+        margin-top: 50px;
+    }
+}
+
+.container .presenceWrapper .discordInfos {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    padding: 10px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.container .presenceWrapper .discordInfos .discordAvatar {
+    display: flex;
+    position: relative;
+}
+
+.container .presenceWrapper .discordInfos .discordAvatar .decoration {
+    position: absolute;
+    height: 86px;
+    width: 86px;
+    left: -8px;
+    top: -7px;
+}
+
+.container .presenceWrapper .discordInfos .discordAvatar .avatarImage {
+    border: 50%;
+    border-radius: 50%;
+    height: 70px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 70px;
+}
+
+.container .presenceWrapper .discordInfos .discordAvatar .discordStatus {
+    bottom: 2px;
+    height: 17px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    right: 2px;
+    width: 17px;
+}
+
+.container .presenceWrapper .discordInfos .discordActivity {
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    gap: 12px;
+}
+
+.container .presenceWrapper .discordInfos .discordUser {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container .presenceWrapper .discordInfos .discordUser h3 {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 2px;
+    font-style: italic;
+    text-align: left;
+}
+
+.container .presenceWrapper .discordInfos .discordUserDiv {
+    align-items: center;
+    display: flex;
+}
+
+.container .presenceWrapper .discordInfos .discordUserDiv span {
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+}
+
+.container .presenceWrapper .discordInfos .discordUserBadges {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.container .presenceWrapper .discordInfos .discordUserBadges img {
+    height: 22px;
+    object-fit: cover;
+    width: 22px;
+}
+
+.container .presenceWrapper .discordInfos .discordUserBadge {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container .presenceWrapper .discordInfos .discordUserBadge {
+    position: relative;
+}
+
+/* .container .presenceWrapper .discordInfos .discordUserBadge::before {
+    content: attr(data-tooltip);
+    background-color: black;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 2px 16px;
+    z-index: 1;
+    transition: opacity 0.3s;
+} */
+
+.container .presenceWrapper .discordInfos .discordUserBadge:hover::before {
+    opacity: 0.8;
+}
+
+.presenceWrapper .spotifyInfos {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    padding: 7px 10px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.presenceWrapper .spotifyCover {
+    display: flex;
+    align-items: center;
+}
+
+.presenceWrapper .spotifyDetails {
+    display: flex;
+    flex-direction: column;
+    min-width: 14rem;
+}
+
+.presenceWrapper .spotifyDetails .spotifyTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.presenceWrapper .spotifyDetails .spotifyTitle h1 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.presenceWrapper .spotifyDetails .spotifyTitle img {
+    width: 20px;
+    height: 20px;
+}
+
+.presenceWrapper .spotifyDetails .spotifyDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.presenceWrapper .spotifyDetails .spotifyDescription span {
+    font-size: 14px;
+}
+
+.presenceWrapper .spotifyDetails .spotifyDescription span:last-child {
+    color: rgb(160, 160, 160);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.presenceWrapper .spotifyDetails .spotifyProgress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 4px;
+    position: relative;
+}
+
+.presenceWrapper .spotifyDetails .spotifyProgress span {
+    font-size: 12px;
+}
+
+.presenceWrapper .spotifyDetails .bar {
+    width: 73%;
+    height: 4px;
+    border-radius: 6px;
+    position: absolute;
+    left: 30px;
+    background-color: grey;
+}
+
+.presenceWrapper .spotifyDetails .bar .progress {
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.container .linkedAccounts {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    filter: drop-shadow(0 0 0.9px #ffffff) !important;
+    cursor: url('/img/extralsmall.png') !important;
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+    font-size: 1.09em;
+}
+
+/* Ajustes para telas */
+/* @media (max-width: 1366px) {
+    .container .linkedAccounts {
+        padding-bottom: 5px;
+    }
+} */
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .container .linkedAccounts {
+        padding-bottom: 5px;
+    }
+}
+
+/* .container .linkedAccounts svg {
+    width: 2.1em;
+    height: 2.1em;
+} */
+
+/* .container .linkedAccounts:hover {
+    transform: scale(1.05);
+} */
+
+/* .container .linkedAccounts a[data-type="Discord"]:hover svg {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 0.8px #ffffff) !important;
+}
+
+.container .linkedAccounts a[data-type="Spotify"]:hover svg {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 0.8px #ffffff) !important;
+}
+
+.container .linkedAccounts a[data-type="Instagram"]:hover svg {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 0.8px #ffffff) !important;
+}
+
+.container .linkedAccounts a[data-type="Roblox"]:hover svg {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 0.8px #ffffff) !important;
+} */
+
+/* Transição suave para todos os SVGs */
+.container .linkedAccounts a svg {
+    transition: transform 0.3s ease;
+}
+
+.container .linkedAccounts .linkedAccountsRedirect {
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: url('/img/extralsmall.png') !important;
+}
+
+.container .linkedAccounts .linkedAccountsRedirect.copied::before {
+    content: 'Copied';
+}
+
+.container .linkedAccounts .linkedAccountsRedirect::before {
+    content: attr(data-type);
+    opacity: 0;
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 2px 16px;
+    z-index: 1;
+    filter: none;
+    box-shadow: none;
+    white-space: nowrap;
+    transition: opacity .2s;
+}
+
+.container .linkedAccounts .linkedAccountsRedirect:hover::before {
+    opacity: .8;
+}
+
+.container .linkedAccountsRedirect {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos base para o tooltip dos profileViews */
+.container .profileViews::before {
+    content: attr(data-type);
+    opacity: 0;
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 2px 16px;
+    z-index: 10; /* Aumentado para garantir que fique acima de outros elementos */
+    filter: none;
+    box-shadow: none;
+    white-space: nowrap;
+    transition: opacity .3s;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.container .profileViews:hover::before {
+    opacity: .8;
+    content: 'Views';
+}
+
+/* Estilo base para profileStats */
+.profileStats {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: -31px; /* Posição consistente na parte inferior */
+    right: 240px; /* Alinhado à direita em vez de usar valor fixo */
+    gap: 0.5rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.178); /* Texto mais visível */
+    transition: all 0.3s ease; /* Transição suave para mudanças de estado */
+    z-index: 5; /* Garantir que esteja acima de outros elementos */
+    filter: blur(10px);
+}
+
+.profileStats:hover {
+    filter: blur(0px);
+}
+
+/* Profile views e location estilizados para serem mais robustos */
+.profileViews, .profileLocation {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Espaçamento ligeiramente aumentado */
+    position: relative;
+    padding: 2px 4px;
+}
+
+/* Responsividade para tablets */
+@media screen and (min-width: 2560px) {
+    .profileStats {
+        bottom: -50px; /* Posição consistente na parte inferior */
+        right: 365px; /* Alinhado à direita em vez de usar valor fixo */
+        padding: 5px 10px;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 992px) {
+    .profileStats {
+        bottom: -31px; /* Posição consistente na parte inferior */
+        right: 230px; /* Alinhado à direita em vez de usar valor fixo */
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .profileStats {
+        bottom: -31px; /* Posição consistente na parte inferior */
+        right: 230px; /* Alinhado à direita em vez de usar valor fixo */
+        padding: 5px 10px;
+    }
+}
+
+/* Responsividade para tablets menores */
+@media (max-width: 768px) {
+    .profileStats {
+        bottom: -25px; /* Posição consistente na parte inferior */
+        right: 230px; /*Alinhado à direita em vez de usar valor fixo*/
+    }
+}
+
+@media (max-width: 760px) {
+    .profileStats {
+        bottom: -25px; /* Posição consistente na parte inferior */
+        right: 215px; /* Alinhado à direita em vez de usar valor fixo */
+    }
+}
+
+@media (max-width: 750px) {
+    .profileStats {
+        bottom: -25px; /* Posição consistente na parte inferior */
+        right: 205px; /* Alinhado à direita em vez de usar valor fixo */
+    }
+}
+
+
+/* Ajuste para telas médias */
+@media (max-width: 600px) {
+    .profileStats {
+        bottom: -20px; /* Posição consistente na parte inferior */
+        right: 160px; /* Alinhado à direita em vez de usar valor fixo */
+        font-size: 13px;
+    }
+}
+
+/* Ajuste para telas médias */
+@media (max-width: 531px) {
+    .profileStats {
+        bottom: -20px; /* Posição consistente na parte inferior */
+        right: 140px; /* Alinhado à direita em vez de usar valor fixo */
+        font-size: 13px;
+    }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 480px) {
+    .profileStats {
+        flex-direction: row; /* Mantém na horizontal para economizar espaço */
+        bottom: -20px; /* Posição consistente na parte inferior */
+        right: 135px; /* Alinhado à direita em vez de usar valor fixo */
+        padding: 4px 8px;
+        /* gap: 0.3rem; */
+        font-size: 12px;
+    }
+    
+    .profileViews svg, .profileLocation svg {
+        width: 14px; /* Ícones um pouco menores */
+        height: 14px;
+    }
+}
+
+/* Telas muito pequenas - ajuste completo */
+@media (max-width: 350px) {
+    .profileStats {
+        position: relative; /* Remove posicionamento absoluto */
+        bottom: auto;
+        right: auto;
+        margin: 10px auto 5px auto; /* Centralizado com margem superior */
+        width: fit-content;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    /* Esconde o separador em telas muito pequenas */
+    .profileStats .separator {
+        display: none;
+    }
+    
+    .profileViews, .profileLocation {
+        margin: 0 5px;
+    }
+}
+
+/* Estilo para hover com feedback visual */
+/* .profileStats:hover {
+    background-color: rgba(30, 30, 30, 0.8);
+} */
+
+/* Estilo para o tooltip do Location */
+.profileLocation::before {
+    content: attr(data-type);
+    opacity: 0;
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 2px 16px;
+    z-index: 10;
+    filter: none;
+    box-shadow: none;
+    white-space: nowrap;
+    transition: opacity .3s;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.profileLocation:hover::before {
+    opacity: .8;
+}
+
+.separator {
+    height: 16px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.041);
+    margin: 0 2px;
+    border-radius: 25px;
+}
+
+/* Estilo para os ícones SVG dentro dos elementos */
+.profileViews svg, .profileLocation svg {
+    flex-shrink: 0; /* Impede que os ícones encolham */
+}
+
+/* Destaque no hover para elementos clicáveis */
+.profileViews:hover, .profileLocation:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.music-container {
+    font-family: 'Chillax', sans-serif !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    min-height: 5rem; /* Altura inicial */
+    padding: 35px 15px;
+    width: 100%;
+    max-width: 650px;
+    max-height: 100px;
+    text-align: center;
+    border: 2px solid rgba(175, 175, 175, 0.048);
+    margin: 0 auto; /* Centraliza o container na tela */
+    will-change: transform, height;
+    transition: height 0.5s ease, min-height 0.5s ease;
+    overflow: hidden;
+}
+
+/* Ajustes para monitores ultrawide (1920px e acima) */
+@media screen and (min-width: 1920px) {
+    .music-container {
+        max-width: 900px; /* Aumenta a largura máxima para ultrawide */
+    }
+}
+
+/* Ajustes específicos para monitores 2560px ou maiores */
+@media screen and (min-width: 2560px) {
+    .music-container {
+        max-width: 1100px; /* Largura ainda maior para monitores realmente grandes */
+    }
+}
+
+/* Ajustes para telas menores (tablets) */
+@media (max-width: 768px) {
+    .music-container {
+        min-height: 10rem; /* Reduz a altura mínima */
+        max-width: 90%; /* Aumenta a largura máxima para ocupar mais espaço */
+    }
+}
+
+/* Ajustes para telas menores (tablets) */
+@media (max-width: 550px) {
+    .music-container {
+        min-height: 12rem; /* Reduz a altura mínima */
+        height: 50px;
+        max-width: 75%; /* Aumenta a largura máxima para ocupar mais espaço */
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .music-container {
+        border: 4px solid rgba(175, 175, 175, 0.034);
+        min-height: 10rem; /* Reduz a altura mínima */
+        max-width: 80%; /* Aumenta a largura máxima para ocupar mais espaço */
+        border-radius: 10px; /* Reduz o border-radius para telas pequenas */
+        bottom: 75px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 413px) {
+    .music-container {
+        max-width: 70%; /* Aumenta a largura máxima para ocupar mais espaço */
+        border-radius: 10px; /* Reduz o border-radius para telas pequenas */
+        bottom: 60px;
+    }
+}
+
+.music-player {
+    width: 500px;
+    border-radius: 10px;
+    font-family: 'Chillax', sans-serif !important;
+    font-size: large;
+}
+
+/* Ajustes para telas menores (tablets) */
+@media screen and (min-width: 2560px) {
+    .music-player {
+        max-width: 90%; /* Aumenta a largura máxima para ocupar mais espaço */
+    }
+}
+
+/* Ajustes para telas menores (tablets) */
+@media (max-width: 768px) {
+    .music-player {
+        min-height: 12rem; /* Reduz a altura mínima */
+        max-width: 90%; /* Aumenta a largura máxima para ocupar mais espaço */
+        padding-top: 40px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .music-player {
+        padding-top: 30px;
+        min-height: 10rem; /* Reduz a altura mínima */
+        max-width: 80%; /* Aumenta a largura máxima para ocupar mais espaço */
+        border-radius: 10px; /* Reduz o border-radius para telas pequenas */
+        bottom: 60px;
+    }
+}
+
+.music-player .player-controls {
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+.player-controls .prev,
+.player-controls .next {
+    transition: opacity 0.4s ease;
+}
+
+.player-controls .prev:hover,
+.player-controls .next:hover {
+    opacity: 1.0 !important;
+}
+
+.music-player .player-timeline {
+    margin-top: -12px;
+}
+
+.player-timeline {
+    display: flex;
+    align-items: center;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #ffffff36;
+    border-radius: 2px;
+    position: relative;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background-color: #fff;
+    border-radius: 2px;
+    will-change: padding, display;
+}
+
+.time-label {
+    color: #ffffff;
+    font-size: 12px;
+    width: 40px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.control-btn:hover {
+    opacity: 1;
+}
+
+.play-pause {
+    font-size: 40px;
+}
+
+.pause-icon {
+  font-size: 40px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    left: 0.5%;
+    top: 1%;
+    opacity: 0.9;
+}
+
+.volume-icon {
+    /* cursor: pointer; */
+    z-index: 2;
+}
+
+.volume-slider {
+    width: 120px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    outline: none;
+    opacity: 0;
+    /* Mudança aqui - transição mais lenta para esconder (desaparecer) */
+    transition: opacity 0.2s ease-in, opacity 0.7s ease-out;
+    -webkit-appearance: none;
+    border-radius: 2px;
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+}
+
+.volume-control:hover .volume-slider {
+    opacity: 0.7;
+    /* Transição rápida para aparecer */
+    transition: opacity 0.2s ease-in;
+}
+
+/* Adicionar este seletor para manter visível quando o cursor estiver sobre o slider */
+.volume-slider:hover {
+    opacity: 0.7;
+    transition: opacity 0s;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: white;
+    cursor: url('/img/Precision Select.cur');
+    border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+    .volume-control {
+        display: none;
+    }
+}
+
