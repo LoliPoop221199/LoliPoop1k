@@ -1,9 +1,5 @@
 <<<<<<< HEAD
-# [<img src="./src/assets/icons/favicon/favicon.png" width="40" align="left" alt="openglocklol">](https://github.com/GlockFatherDraco/opengunslol) opengunslol
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 This prject is a fully open source website inspired by [guns.lol](https://guns.lol), [ezbio](https://e-z.bio/) and [linktree](https://linktr.ee/)
 
@@ -22,11 +18,6 @@ This prject is a fully open source website inspired by [guns.lol](https://guns.l
 | Custom cursor | ✅ |
 | Views system | ❌ |
 
----
 
 
-
-[Live Preview](https://glockfatherdraco.github.io/opengunslol/)
-=======
-.
 >>>>>>> bb3c063f70a5a2d16da30d7d4cf2231314cf9523
